@@ -327,8 +327,9 @@ controller:
     externalTrafficPolicy: Local
 
     ## The annotations of the Ingress Controller service.
-    annotations: {}
-
+    annotations: 
+      service.beta.kubernetes.io/aws-load-balancer-type: "nlb"  # or "elb" for Classic Load Balancer   # my edit #
+    # Other AWS-specific annotations can be added here as needed
     ## The extra labels of the service.
     extraLabels: {}
 
