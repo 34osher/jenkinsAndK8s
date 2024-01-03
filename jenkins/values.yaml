@@ -25,8 +25,8 @@ controller:
   # Used for label app.kubernetes.io/component
   componentName: "jenkins-controller"
   image: "jenkins/jenkins"
-    tag: ""
-  tagLabel: latest
+  # tag: "2.426.2-jdk17"
+  tagLabel: jdk17
   imagePullPolicy: "Always"
   imagePullSecretName:
   # Optionally configure lifetime for controller-container
