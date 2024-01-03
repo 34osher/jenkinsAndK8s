@@ -4,6 +4,6 @@ metadata:
   name: efs-provisioner
 data:
   file.system.id: fs-47a2c22e
-  aws.region: us-west-2
+  aws.region: eu-west-3
   provisioner.name: example.com/aws-efs
   dns.name: ""

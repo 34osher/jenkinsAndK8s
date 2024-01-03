@@ -4,10 +4,10 @@ kind: ConfigMap
 metadata:
   name: efs-provisioner
 data:
-  file.system.id: yourEFSsystemid
-  aws.region: regionyourEFSisin
+  file.system.id: fs-02afef15677207c61
+  aws.region: eu-west-3
   provisioner.name: example.com/aws-efs
-  dns.name: ""
+  dns.name: "fs-02afef15677207c61.efs.eu-west-3.amazonaws.com"
 ---
 kind: Deployment
 apiVersion: extensions/v1beta1
@@ -65,7 +65,7 @@ provisioner: example.com/aws-efs
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: efs
+  name: efs-Claim
   annotations:
     volume.beta.kubernetes.io/storage-class: "aws-efs"
 spec:
@@ -73,5 +73,5 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 1Mi
+      storage: 6Gi
 ---
