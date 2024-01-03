@@ -26,7 +26,7 @@ controller:
   componentName: "jenkins-controller"
   image: "jenkins/jenkins"
   # tag: "2.426.2-jdk17"
-  tagLabel: jdk17
+  tagLabel: latest
   imagePullPolicy: "Always"
   imagePullSecretName:
   # Optionally configure lifetime for controller-container
@@ -189,7 +189,7 @@ controller:
     enabled: false
     # For Kubernetes v1.5+, use 'policy/v1beta1'
     # For Kubernetes v1.21+, use 'policy/v1'
-    apiVersion: "policy/v1beta1"
+    apiVersion: "policy/v1"
     annotations: {}
     labels: {}
     # maxUnavailable: "0"
