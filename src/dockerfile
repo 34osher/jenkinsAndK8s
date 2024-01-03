@@ -1,0 +1,26 @@
+FROM python:3.8-slim
+
+# copy project
+COPY . /usr/src/app/
+
+WORKDIR /usr/src/app
+
+# RUN pip install --upgrade pip
+RUN pip install gunicorn
+
+# install dependencies --no-cache-dir remove th __pyc
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Keeps Python from generating .pyc files in the container
+ENV PYTHONDONTWRITEBYTECODE=1
+# Turns off buffering for easier container logging
+ENV PYTHONUNBUFFERED=1
+
+# Make port 5000 available to the world outside this container
+EXPOSE 8000
+
+# Define environment variable
+ENV BG_COLOR=#3498db
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "wsgi:app"]
+  
