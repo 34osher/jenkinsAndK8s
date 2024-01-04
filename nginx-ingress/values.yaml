@@ -430,8 +430,8 @@ controller:
 
   pod:
     ## The annotations of the Ingress Controller pod.
-    annotations: 
-      service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+    annotations: {}
+      
     ## The additional extra labels of the Ingress Controller pod.
     extraLabels: {}
 

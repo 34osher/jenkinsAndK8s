@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-weather-app-ingress
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: for-k8s-eabb40b337d19829.elb.eu-west-3.amazonaws.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: jenkins-service
+            name: 
+            port:
+              number: 8080
